@@ -1,0 +1,29 @@
+System Design Interviews: A step by step guide
+
+1. Requirements Clarification
+
+Clarify functional + non-functional requirements and narrow the scope of what you will design.
+
+2. API / System Interface Definition
+
+Define the endpoints (input/output) to make the system’s contract explicit.
+
+3. Back-of-the-Envelope Estimation
+
+Estimate scale: QPS, storage, bandwidth, traffic patterns.
+
+4. Data Model Definition
+
+Identify entities, relationships, and choose the appropriate database systems.
+
+5. High-Level Architecture
+
+Draw and explain a 5–7 component diagram covering all major system blocks.
+
+6. Deep Dive Into Key Components
+
+Pick 2–3 important components and discuss tradeoffs, alternatives, and optimizations.
+
+7. Identify Bottlenecks & Resolve Them
+
+Address single points of failure, scaling limits, caching strategy, replication, and monitoring.
