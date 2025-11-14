@@ -1,0 +1,39 @@
+Load Balancer (LB) is another critical component of any distributed system. It helps to spread the traffic across a cluster of servers to improve responsiveness and availability of applications, websites or databases.
+
+To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add LBs at three places:
+	Between the user and the web server
+	 Between web servers and an internal platform layer, like application servers or cache servers
+	Between internal platform layer and database.
+
+Service providers experience less downtime and higher throughput.
+
+Smart load balancers provide benefits like predictive analytics that determine traffic bottlenecks before they happen. As a result, the smart load balancer
+gives an organization actionable insights. These are key to automation and can
+help drive business decisions. - Thanksgiving sale or Year end insurance etc 
+
+Health Checks - Load balancers should only forward traffic to “healthy” backend servers. To monitor the health of a backend server, “health checks” regularly attempt to connect to backend servers to ensure that servers are listening. If a server fails a health check, it is automatically removed from the pool, and traffic will not be forwarded to it until it responds to the health checks again.
+
+Load Balancing Algorithms (Concise)
+
+1. Least Connections
+Sends traffic to the server with the fewest active connections.
+Best when connections are long-lived or unevenly distributed.
+
+2. Least Response Time
+Selects the server with the fewest active connections and the lowest response time.
+
+3. Least Bandwidth
+Routes requests to the server currently serving the least outgoing traffic (in Mbps).
+
+4. Round Robin
+Cycles through servers in order.
+Use when servers are equal and connections are short.
+
+5. Weighted Round Robin
+Like Round Robin but assigns more requests to servers with higher weight (greater capacity).
+
+6. IP Hash
+Uses a hash of the client’s IP to always route that client to the same server (session stickiness).
+
+
+The load balancer can be a single point of failure; to overcome this, a second load balancer can be connected to the first to form a cluster. Each LB monitors the health of the other and, since both of them are equally capable of serving traffic and failure detection, in the event the main load balancer fails, the second load balancer takes over.
