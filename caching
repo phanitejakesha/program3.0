@@ -1,0 +1,31 @@
+Caches take advantage of the locality of reference principle: recently requested data is likely to be requested again
+
+A cache is like short-term memory: it has a limited amount of space, but is typically faster than the original data source and contains the most recently accessed items
+
+- Application server cache
+- Content Distribution Network (CDN)
+CDNs are a kind of cache that comes into play for sites serving large amounts of
+static media. - Eg Netflix 
+
+- Cache Invalidation
+1. Write-Through
+Write goes to cache + database simultaneously.
+Pros: Strong consistency, no data loss on crash.
+Cons: High write latency (writes happen twice).
+2. Write-Around
+Write goes directly to database, skips cache.
+Pros: Cache isn’t polluted with infrequently-read data.
+Cons: Recent writes cause cache misses on read → slower reads.
+3. Write-Back
+Write goes to cache only, DB updated later (lazy write).
+Pros: Very low write latency, high throughput.
+Cons: Risk of data loss if cache crashes before flush.
+
+- Cache eviction policies
+
+FIFO – Evict the oldest accessed item first.
+LIFO – Evict the most recently accessed item first.
+LRU – Evict the least recently used item first.
+MRU – Evict the most recently used item first.
+LFU – Evict the least frequently used item first.
+RR – Evict a random item.
